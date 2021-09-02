@@ -5,3 +5,6 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis
 
 ## gRPC proto3
 python -m grpc_tools.protoc --proto_path=. ./search.proto --python_out=. --grpc_python_out=.
+
+
+test

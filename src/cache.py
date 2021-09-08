@@ -4,7 +4,7 @@ import json
 PORT = 6379
 DB = 0
 
-def cache_load_products(key):
+def cache_fetch_products(key):
     r = redis.Redis(host="localhost", port=PORT, db=DB)  # se conecta a redis
     value = r.get(key)
     if value:
@@ -12,8 +12,9 @@ def cache_load_products(key):
     else:
         return None                 # retorna una vacio
 
-def cache_save_json(key, value):
+def cache_insert_json(key, dict):
     r = redis.Redis(host="localhost", port=PORT, db=DB) # se conecta a redis
+    value = json.dumps(dict)
     r.set(key, value)
 
 
@@ -24,6 +25,6 @@ if __name__ == "__main__":
         {'name':'test bruh', 'stock':213123},
         {'name':'asddasdasd test', 'stock':3}
     ]
-    cache_save_json("test", json.dumps(products))
-    cache_items = cache_load_products("test")
+    cache_insert_json("test", products)
+    cache_items = cache_fetch_products("test")
     print(f"cache: {cache_items}")

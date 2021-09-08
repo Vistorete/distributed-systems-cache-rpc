@@ -24,16 +24,22 @@ class SearchClient(object):
 
 
 
+def ask_for_products(keyword):
+    search_client = SearchClient()
+    products = []
 
+    result = search_client.get_url(message=keyword)
 
+    # protocol buffer class to dict
+    for i in result.product:
+        dict = {
+            "name": i.name,
+            "price": i.price,
+            "stock": i.stock
+        }
+        products.append(dict)
 
-
-
-
-
-
-
-
+    return products
 
 
 
@@ -49,14 +55,17 @@ def hello():
 @app.route("/inventory/search")
 def search_inventory():
     search_query = request.args.get("q")                    # obtiene el parametro q
-    cache_products = cache.cache_load_products(key=search_query)        # busca en el cache
+    cache_products = cache.cache_fetch_products(key=search_query)        # busca en el cache
 
     if cache_products:                                         # si hay resultado en el cache
         return jsonify({"products_list":cache_products})       # arma el json y lo manda
 
     else:
         # es decir el string de la b ́usqueda es la llave y el valor es el resultado
-        return f"no result for \"{search_query}\""
+        invetory_products = ask_for_products(search_query)
+        cache.cache_insert_json(search_query, invetory_products)
+        return jsonify({"products_list": invetory_products})
+
     
 
 if __name__ == "__main__":

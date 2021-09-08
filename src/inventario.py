@@ -1,3 +1,4 @@
+from time import sleep
 import grpc
 from concurrent import futures
 import search_pb2_grpc as pb2_grpc
@@ -10,7 +11,7 @@ class SearchService(pb2_grpc.SearchServicer):
         pass
     
 
-    def find_invetory(self, key_word):
+    def search_in_invetory(self, key_word):
         file = open("invetory_list.json",)
         data_list = json.load(file)
         items = []
@@ -18,6 +19,7 @@ class SearchService(pb2_grpc.SearchServicer):
             if key_word.upper() in item["name"].upper():
                 items.append(item)
                 print(item)
+        sleep(2)
         return items
 
     def GetServerResponse(self, request, context):
@@ -26,7 +28,7 @@ class SearchService(pb2_grpc.SearchServicer):
         print(f"Keyword: {keyword_received}")
         # Aca se debe buscar en el inventario
         # print("inicio")
-        result = self.find_invetory(keyword_received)
+        result = self.search_in_invetory(keyword_received)
         # print("fin")
         
         # result = {'name': "yes, i am", 'price': 123, "stock": 123}

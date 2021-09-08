@@ -14,7 +14,7 @@ class SearchService(pb2_grpc.SearchServicer):
         result = f'Message:"{message}"'
         print(result)
         # Aca se debe buscar en el inventario
-        result = {'name': "yes, i am", 'price': 123}
+        result = {'name': "yes, i am", 'price': 123, "stock": 123}
         search_res = {'product':[result]}
         return pb2.SearchResults(**search_res)
 

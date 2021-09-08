@@ -1,3 +1,4 @@
+import json
 import grpc
 import search_pb2_grpc as pb2_grpc
 import search_pb2 as pb2
@@ -21,7 +22,22 @@ class SearchClient(object):
 
 if __name__ == '__main__':
 
-    client = SearchClient()
-    result = client.get_url(message="Hello Server you there?")
-    print(f'server: {result}')
+    search_client = SearchClient()
+    key_word = "gb"
+    result = search_client.get_url(message=key_word)
+    # result = dict(result)
+    products = []
+    for i in result.product:
+        dict = {
+            "name": i.name,
+            "price": i.price,
+            "stock": i.stock
+        }
+        print(dict)
+        products.append(dict)
+
+    print(products)
+    
+    # print(r"{}".format(result))
+    # print(f': {result}')
     # print(result.product[0].name + "*******")

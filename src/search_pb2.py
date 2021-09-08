@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0csearch.proto\x12\x06search\"\x1a\n\x07Message\x12\x0f\n\x07message\x18\x01 \x01(\t\"1\n\rSearchResults\x12 \n\x07product\x18\x01 \x03(\x0b\x32\x0f.search.Product\"&\n\x07Product\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05price\x18\x02 \x01(\x05\x32\x45\n\x06Search\x12;\n\x11GetServerResponse\x12\x0f.search.Message\x1a\x15.search.SearchResultsb\x06proto3'
+  serialized_pb=b'\n\x0csearch.proto\x12\x06search\"\x1a\n\x07Message\x12\x0f\n\x07message\x18\x01 \x01(\t\"1\n\rSearchResults\x12 \n\x07product\x18\x01 \x03(\x0b\x32\x0f.search.Product\"5\n\x07Product\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05price\x18\x02 \x01(\x05\x12\r\n\x05stock\x18\x03 \x01(\x05\x32\x45\n\x06Search\x12;\n\x11GetServerResponse\x12\x0f.search.Message\x1a\x15.search.SearchResultsb\x06proto3'
 )
 
 
@@ -111,6 +111,13 @@ _PRODUCT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stock', full_name='search.Product.stock', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -124,7 +131,7 @@ _PRODUCT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=103,
-  serialized_end=141,
+  serialized_end=156,
 )
 
 _SEARCHRESULTS.fields_by_name['product'].message_type = _PRODUCT
@@ -163,8 +170,8 @@ _SEARCH = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=143,
-  serialized_end=212,
+  serialized_start=158,
+  serialized_end=227,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetServerResponse',

@@ -26,7 +26,7 @@ class SearchService(pb2_grpc.SearchServicer):
         message = request.message
         keyword_received = f'{message}'
         print(f"Keyword: {keyword_received}")
-        # Aca se debe buscar en el inventario
+        # Aca se debe buscar en el inventario# 
         # print("inicio")
         result = self.search_in_invetory(keyword_received)
         # print("fin")

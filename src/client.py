@@ -1,6 +1,7 @@
 import grpc
 import search_pb2_grpc as pb2_grpc
 import search_pb2 as pb2
+# test
 
 class SearchClient(object):
     def __init__(self):

@@ -12,3 +12,4 @@ config get maxmemory
 
 config set maxmemory-policy volatile-lru
 config get maxmemory-policy
+test

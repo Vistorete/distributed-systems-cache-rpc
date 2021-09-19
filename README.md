@@ -16,7 +16,7 @@ El codigo fuente de la aplicacíon se encuentra en la carpeta `src` y se encuent
 * **search_pb2_grpc.py y search_pb2.py:** Modulos generados a partir de la estructura de datos requerida para ser utilizadas en Python.
 * **client.py y server.py:** Modulos de prueba proporcionados por el ayudante. 
 
-## Ejecución del programa
+## Configuración y ejecución
 
 ### Configuración de REDIS
 

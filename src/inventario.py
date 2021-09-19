@@ -19,7 +19,7 @@ class SearchService(pb2_grpc.SearchServicer):
             if key_word.upper() in item["name"].upper():
                 items.append(item)
                 print(item)
-        sleep(2)
+        # sleep(2)
         return items
 
     def GetServerResponse(self, request, context):

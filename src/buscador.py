@@ -21,16 +21,13 @@ class SearchClient(object):
         return self.stub.GetServerResponse(message)
 
 
-
-
-
 def ask_for_products(keyword):
     search_client = SearchClient()
-    products = []
 
     result = search_client.get_url(message=keyword)
 
     # protocol buffer class to dict
+    products = []
     for i in result.product:
         dict = {
             "name": i.name,

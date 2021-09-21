@@ -51,3 +51,8 @@ Ejemplos de búsquedas existosas:
 * samsung
 * Corsair
 * ram
+
+Integrantes:
+* Ariel Gómez
+* Pablo Muñoz
+* Víctor Sánchez

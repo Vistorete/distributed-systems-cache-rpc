@@ -2,12 +2,12 @@
 
 ## Descripción general
 
-El código fuente de la aplicación se encuentra en la carpeta `src` y se encuentra programado en Python. Los modulos son los siguientes:
+El código fuente de la aplicación se encuentra en la carpeta `src` y se encuentra programado en Python. Los módulos son los siguientes:
 
 ### Módulos programados
 
-* **buscador.py:** Módulo que contiene la Api REST, recibe las request para buscar productos y son devueltos en formato JSON. Si el resultado de la busqueda se encuentra en el cache lo retorna inmediatamente, caso contrario se comunica via RPC con el modulo del inventario para obtener el resultado.
-* **cache.py:** Módulo que contiene los metodos para acceder al cache.
+* **buscador.py:** Módulo que contiene la Api REST, recibe las request para buscar productos y son devueltos en formato JSON. Si el resultado de la búsqueda se encuentra en el caché lo retorna inmediatamente, caso contrario se comunica via RPC con el módulo del inventario para obtener el resultado.
+* **cache.py:** Módulo que contiene los metodos para acceder al caché.
 * **inventario.py:** Módulo que contiene el servicio que busca en el inventario `inventory_list.json`, el cual es un JSON que contiene la lista de productos.
 
 ### Otros modulos
@@ -22,7 +22,7 @@ El código fuente de la aplicación se encuentra en la carpeta `src` y se encuen
 
 La configuración utilizada en redis fue la siguiente:
 
-* Política de desalojo: LRU, elimina del cache la que no se ha usado en mayor tiempo, configurada en el cliente de redis con el comando
+* Política de desalojo: LRU, elimina del caché la que no se ha usado en mayor tiempo, configurada en el cliente de redis con el comando
 
 ```bat 
 config set maxmemory-policy allkeys-lru
@@ -36,7 +36,7 @@ config set maxmemory 20M
 
 ### Dependencias
 
-Las dependencias necesarias para que se pueda ejectuar el programa se encuentran en el archivo `requirements.txt`.
+Las dependencias necesarias para que se pueda ejecutar el programa se encuentran en el archivo `requirements.txt`.
 
 ### Ejecución
 

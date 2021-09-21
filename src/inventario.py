@@ -12,7 +12,7 @@ class SearchService(pb2_grpc.SearchServicer):
     
 
     def search_in_invetory(self, key_word):
-        file = open("invetory_list.json",)
+        file = open("inventory_list.json",)
         data_list = json.load(file)
         items = []
         for item in data_list:

@@ -52,7 +52,7 @@ Ejemplos de búsquedas existosas:
 * Corsair
 * ram
 
-##Integrantes:
+## Integrantes:
 * Ariel Gómez
 * Pablo Muñoz
 * Víctor Sánchez

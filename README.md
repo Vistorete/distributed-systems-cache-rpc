@@ -2,19 +2,19 @@
 
 ## Descripción general
 
-El codigo fuente de la aplicacíon se encuentra en la carpeta `src` y se encuentra programado en Python. Los modulos son los siguientes:
+El código fuente de la aplicación se encuentra en la carpeta `src` y se encuentra programado en Python. Los modulos son los siguientes:
 
-### Modulos programados
+### Módulos programados
 
-* **buscador.py:** Modulo que contiene la Api REST, recibe las request para buscar productos y son devueltos en formato JSON. Si el resultado de la busqueda se encuentra en el cache lo retorna inmediatamente, caso contrario se comunica via RPC con el modulo del inventario para obtener el resultado.
-* **cache.py:** Modulo que contiene los metodos para acceder al cache.
-* **inventario.py:** Modulo que contiene el servicio que busca en el inventario `invetory_list.json`, el cual es un JSON que contiene la lista de productos.
+* **buscador.py:** Módulo que contiene la Api REST, recibe las request para buscar productos y son devueltos en formato JSON. Si el resultado de la busqueda se encuentra en el cache lo retorna inmediatamente, caso contrario se comunica via RPC con el modulo del inventario para obtener el resultado.
+* **cache.py:** Módulo que contiene los metodos para acceder al cache.
+* **inventario.py:** Módulo que contiene el servicio que busca en el inventario `inventory_list.json`, el cual es un JSON que contiene la lista de productos.
 
 ### Otros modulos
 
-* **search.proto:** modulo que contiene la estructura de los datos utilizados para la comunicación.
-* **search_pb2_grpc.py y search_pb2.py:** Modulos generados a partir de la estructura de datos requerida para ser utilizadas en Python.
-* **client.py y server.py:** Modulos de prueba proporcionados por el ayudante. 
+* **search.proto:** Módulo que contiene la estructura de los datos utilizados para la comunicación.
+* **search_pb2_grpc.py y search_pb2.py:** Módulos generados a partir de la estructura de datos requerida para ser utilizadas en Python.
+* **client.py y server.py:** Módulos de prueba proporcionados por el ayudante. 
 
 ## Configuración y ejecución
 
@@ -22,13 +22,13 @@ El codigo fuente de la aplicacíon se encuentra en la carpeta `src` y se encuent
 
 La configuración utilizada en redis fue la siguiente:
 
-* Politica de desalojo: LRU, elimina del cache la que no se ha usado en mayor tiempo, configurada en el cliente de redis con el comando
+* Política de desalojo: LRU, elimina del cache la que no se ha usado en mayor tiempo, configurada en el cliente de redis con el comando
 
 ```bat 
 config set maxmemory-policy allkeys-lru
 ```
 
-* Maxima memoria: 20MB, configurado con cliente de redis con el comando
+* Maxima memoria: 20MB, configurado en cliente de redis con el comando
 
 ```bat 
 config set maxmemory 20M

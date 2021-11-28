@@ -42,6 +42,17 @@ Las dependencias necesarias para que se pueda ejecutar el programa se encuentran
 
 Con las dependencias instaladas se deben ejecutar los archivos `buscador.py` e `inventario.py`.
 
- 
-## Redis install
-https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-20-04-es
+Para realizar la búsqueda se debe ingresar desde el navegador a la siguiente dirección: `localhost:5000/inventory/search?q=`.
+
+Se debe ingresar el objeto a buscar luego del `q=`.
+
+Ejemplos de búsquedas existosas:
+
+* samsung
+* Corsair
+* ram
+
+## Integrantes:
+* Ariel Gómez
+* Pablo Muñoz
+* Víctor Sánchez

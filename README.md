@@ -30,7 +30,7 @@ config set maxmemory-policy allkeys-lru
 
 * Maxima memoria: 20MB, configurado en cliente de redis con el comando
 
-```bat 
+```bat
 config set maxmemory 20M
 ```
 
